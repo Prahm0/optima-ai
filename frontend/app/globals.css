@@ -1,26 +1,18 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* --- START: Freeform Box Width Fix --- */
+#schedule-form-override {
+    /* Ensures the form takes 100% of its parent's width */
+    width: 100% !important; 
+    /* Stops the form from shrinking in a flex or grid layout */
+    min-width: 100% !important; 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+#schedule-form-override textarea {
+    /* Ensures the textarea itself fills the entire form width */
+    width: 100% !important;
+    box-sizing: border-box !important; /* Ensures padding doesn't push the element outside its container */
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* --- END: Freeform Box Width Fix --- */
