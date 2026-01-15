@@ -1,1 +1,3 @@
 To run backend: uvicorn main:app --reload
+Frontend: npm run dev
+Activating venv: .venv\Scripts\Activate.ps1
